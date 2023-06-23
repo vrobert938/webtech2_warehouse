@@ -1,0 +1,21 @@
+<form (ngSubmit)="submitForm()" [formGroup]="form">
+    <div class="form-row">
+        <mat-label>Email</mat-label>
+        <mat-form-field>
+            <input [(ngModel)]="user.email" matInput name="email" formControlName="email" required/>
+        </mat-form-field>
+    </div>
+    <div class="form-row">
+        <mat-label>Jelszó</mat-label>
+        <mat-form-field>
+            <input type="password" [(ngModel)]="user.password" matInput name="password" formControlName="password" required/>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <button type="submit">Bejelentkezés</button>
+      </div>
+</form>
+<button (click)="navigateToRegisterPage()">
+    Regisztráció
+</button>
