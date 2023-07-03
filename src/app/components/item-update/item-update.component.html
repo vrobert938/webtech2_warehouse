@@ -1,0 +1,16 @@
+<!-- item-update.component.html -->
+<div>
+    <h2>Update Item</h2>
+    <form (ngSubmit)="updateItem()">
+      <div>
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="updatedItem.name" name="name" required>
+      </div>
+      <div>
+        <label>Quantity:</label>
+        <input type="number" [(ngModel)]="updatedItem.quantity" name="quantity" required>
+      </div>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  

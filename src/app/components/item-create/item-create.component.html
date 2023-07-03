@@ -1,0 +1,14 @@
+<div>
+    <h2>Create Item</h2>
+    <form (ngSubmit)="createItem()">
+      <div>
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="newItem.name" name="name" required>
+      </div>
+      <div>
+        <label>Quantity:</label>
+        <input type="number" [(ngModel)]="newItem.quantity" name="quantity" required>
+      </div>
+      <button type="submit">Create</button>
+    </form>
+  </div>

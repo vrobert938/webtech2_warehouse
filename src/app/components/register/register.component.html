@@ -1,32 +1,34 @@
 <div class="container">
-    <form (ngSubmit)="submitForm()" [formGroup]="form">
-        <div class="form-row">
-            <mat-label>Keresztnév</mat-label>
-            <mat-form-field>
-                <input [(ngModel)]="user.first_name" matInput name="firstname" formControlName="firstname" required/>
-            </mat-form-field>
+    <form (ngSubmit)="submitForm()" [formGroup]="form" class="register-form">
+        <div class="form-group">
+            <label>First Name:</label>
+            <input type="text" id="firstname" name="firstname" [(ngModel)]="user.first_name" formControlName="firstname"
+                required />
         </div>
-        <div class="form-row">
-            <mat-label>Vezetéknév</mat-label>
-            <mat-form-field>
-                <input [(ngModel)]="user.last_name" matInput name="lastname" formControlName="lastname" required/>
-            </mat-form-field>
+        <div class="form-group">
+            <label>Last Name:</label>
+            <input type="text" id="lastname" name="lastname" [(ngModel)]="user.last_name" formControlName="lastname"
+                required />
         </div>
-        <div class="form-row">
-            <mat-label>Email</mat-label>
-            <mat-form-field>
-                <input [(ngModel)]="user.email" matInput name="email" formControlName="email" required/>
-            </mat-form-field>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="user.email" formControlName="email" required />
+            <div *ngIf="form.controls.email.invalid && (form.controls.email.dirty || form.controls.email.touched)"
+                class="error-message">Invalid email</div>
         </div>
-        <div class="form-row">
-            <mat-label>Jelszó</mat-label>
-            <mat-form-field>
-                <input type="password" [(ngModel)]="user.password" matInput name="password" formControlName="password" required/>
-            </mat-form-field>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" id="password" name="password" [(ngModel)]="user.password" formControlName="password"
+                required />
+            <div *ngIf="form.controls.password.invalid && (form.controls.password.dirty || form.controls.password.touched)"
+                class="error-message">Password must be at least 6 characters</div>
         </div>
 
-        <div>
-            <button type="submit"></button>
-          </div>
+        <div *ngIf="feedbackMessage" class="feedback-message">{{ feedbackMessage }}</div>
+
+        <div class="button-group">
+            <button type="submit" class="register-button">Register</button>
+            <button type="button" class="login-button" (click)="navigateToLoginPage()">Login</button>
+        </div>
     </form>
 </div>

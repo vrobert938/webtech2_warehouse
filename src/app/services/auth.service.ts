@@ -38,7 +38,6 @@ export class AuthService {
   logout(){
     this._isLoggedIn$.next(false);
     sessionStorage.clear();
-    // this.router.navigate(['login']);
   }
 }
 

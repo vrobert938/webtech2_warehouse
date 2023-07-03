@@ -13,6 +13,9 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/mat
 import { MatButtonModule } from '@angular/material/button';
 import { WarehouseComponent } from './components/warehouse/warehouse.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { ItemCreateComponent } from './components/item-create/item-create.component';
+import { ItemListComponent } from './components/item-list/item-list.component';
+import { ItemUpdateComponent } from './components/item-update/item-update.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    WarehouseComponent
+    WarehouseComponent,
+    ItemCreateComponent,
+    ItemListComponent,
+    ItemUpdateComponent
   ],
   imports: [
     AppRoutingModule,

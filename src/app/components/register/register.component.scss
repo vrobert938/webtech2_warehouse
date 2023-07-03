@@ -1,0 +1,61 @@
+.register-form {
+    max-width: 480px; /* Adjust the max-width as per your preference */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .register-button,
+  .login-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-button {
+    background-color: #2196f3;
+  }
+  
+  .login-button {
+    background-color: #4caf50;
+  }
+  .error-message{
+    color: #ff0000;
+  }
+  
+  .register-button:hover,
+  .login-button:hover {
+    background-color: #45a049;
+  }
+  
+  .register-button:focus,
+  .login-button:focus {
+    outline: none;
+  }
+  

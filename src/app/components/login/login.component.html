@@ -1,21 +1,14 @@
-<form (ngSubmit)="submitForm()" [formGroup]="form">
-    <div class="form-row">
-        <mat-label>Email</mat-label>
-        <mat-form-field>
-            <input [(ngModel)]="user.email" matInput name="email" formControlName="email" required/>
-        </mat-form-field>
+<form (ngSubmit)="submitForm()" [formGroup]="form" class="login-form">
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="user.email" formControlName="email" required />
     </div>
-    <div class="form-row">
-        <mat-label>Jelszó</mat-label>
-        <mat-form-field>
-            <input type="password" [(ngModel)]="user.password" matInput name="password" formControlName="password" required/>
-        </mat-form-field>
+    <div class="form-group">
+        <label>Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="user.password" formControlName="password" required />
     </div>
-
-    <div>
-        <button type="submit">Bejelentkezés</button>
-      </div>
+    <div class="button-group">
+        <button type="submit" class="login-button">Login</button>
+        <button type="button" class="register-button" (click)="navigateToRegisterPage()">Register</button>
+    </div>
 </form>
-<button (click)="navigateToRegisterPage()">
-    Regisztráció
-</button>
