@@ -1,27 +1,14 @@
-# WarehouseApp
+A program futásához, szükséges egy MongoDB kapcsolat. 
+Amit a .env-ben a következőre állítottam.
+"MONGO_URI=mongodb://127.0.0.1:27017/warehauseDB"
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+Az "npm i" installálást követően a webtech2_warhause mappából 
+az egyik terminálon az "npm run dev" 
+míg egy másikon az "ng serve" parancsot futtatva a lovalhost:4200/ címen elérhető az alkalmazás.
 
-## Development server
+Sajnos az alkalmazás nem funkcionál 100%-osan. "Under construction".
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A repóban megtalálható a "Beszámoló Vékony Róbert H0F0SZ webtech2.docx.
+TLDR: a regisztráció, login, authentikáció működik, az Items.find({}) és Items.create({"name":"item1","quantity":1}) viszont nem.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Szép Napot!

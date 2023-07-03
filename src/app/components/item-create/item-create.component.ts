@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
-import { Item } from 'src/models/Items';
+import { Item } from 'src/models/Item';
 
 @Component({
   selector: 'app-item-create',

@@ -1,9 +1,21 @@
-<div>
+<!-- <div>
     <h2>Item List</h2>
     <ul>
       <li *ngFor="let item of items">
         {{ item.name }} (Quantity: {{ item.quantity }})
-        <!-- <button (click)="deleteItem(item._id)">Delete</button> -->
+        <button (click)="deleteItem(item._id)">Delete</button>
       </li>
     </ul>
+</div> -->
+
+<div class="item-list">
+  <h2>Item List</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      <span class="item-name">{{ item.name }}</span>
+      <span class="item-quantity">Quantity: {{ item.quantity }}</span>
+      <!-- <button class="item-button" (click)="navigateToUpdateItemPage(item.name)">Get Details</button> -->
+      <button class="item-button" (click)="deleteItem(item.name)">Delete</button>
+    </li>
+  </ul>
 </div>

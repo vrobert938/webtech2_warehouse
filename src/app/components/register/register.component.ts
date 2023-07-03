@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
         console.log(res);
         // Check the response and display feedback message
         if (res.token) {
-          this.navigateToWarehousePage();          
+          this.navigateToGetItemsPage();          
         } else {
           console.log('Registration failed');
           this.feedbackMessage = 'Registration failed: '+ res.statusText;
@@ -53,13 +53,12 @@ export class RegisterComponent implements OnInit {
         // Handle the error and display an error message to the user
       }
     );
-
     }
 
   navigateToLoginPage(){
     this.router.navigate(['login']);
   }
-  navigateToWarehousePage(){
-    this.router.navigate(['warehouse']);
+  navigateToGetItemsPage(){
+    this.router.navigate(['getItems']);
   }
 }

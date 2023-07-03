@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { ActivatedRoute } from '@angular/router';
-import { Item } from 'model/item.js';
+import { Item } from 'src/models/Item';
 
 @Component({
   selector: 'app-item-update',
@@ -23,7 +23,7 @@ export class ItemUpdateComponent implements OnInit {
   }
 
   getItemDetails() {
-    this.httpService.getItem(this.itemId).subscribe((response) => {
+    this.httpService.getItemDetails(this.itemId).subscribe((response) => {
       this.updatedItem = response;
     }, (error) => {
       console.error('Error retrieving item details:', error);

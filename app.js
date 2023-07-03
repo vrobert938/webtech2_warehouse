@@ -7,15 +7,14 @@ const jwt = require('jsonwebtoken');
 const app = express();
 // importing user context
 const User = require("./model/user");
-const ItemSchema = require("./model/item");
+const Item = require("./model/item");
 const cors = require('cors');
 
 app.use(express.json());
 app.use(cors())
 
-// Logic goes here
-
 module.exports = app;
+
 
 app.get('/works', async (req, res) => {
   try {
@@ -78,7 +77,7 @@ app.post("/register", async (req, res) => {
   }
   console.log(res);
   return res;
-  // Our register logic ends here
+  // Register logic ends here
 });
 
 //Item Create
@@ -88,20 +87,20 @@ app.post('/createItem', async (req, res) => {
     const { name, quantity } = req.body;
     console.log("name: " + name + ", quantity: " + quantity);
     //res.send(req.body);
-    const item = await ItemSchema.create(name, quantity);
+    const item = await Item.create(name, quantity);
     console.log("Item created");
     res.status(200).json(item);
   }
-  catch {
-    console.log("Error cought");
-    res.status(500).json({ message: "Error" });
+  catch (error) {
+    console.log("Error caught");
+    res.status(500).json({ message: error });
   }
 });
 
 app.get('/getItems', async (req, res) => {
   console.log("Get items called");
   try {
-    await ItemSchema.find({}, (err, items) => {
+    await Item.find({}, (err, items) => {
       if (err) {
         console.error('Error retrieving items:', err);
         res.status(500).json({ error: 'Failed to retrieve items' });
@@ -110,9 +109,9 @@ app.get('/getItems', async (req, res) => {
       }
     });
   }
-  catch {
-    console.log("Error cought");
-    res.status(500).json({ message: "Error" });
+  catch (error) {
+    console.log("Error caught");
+    res.status(500).json({ message: error.message });
   }
 });
 
@@ -153,12 +152,10 @@ app.post("/login", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-  // Our register logic ends here
 });
 
 const auth = require("./middleware/auth");
 const { async } = require("rxjs");
-const { default: Item } = require("./model/item");
 
 app.post("/welcome", auth, (req, res) => {
   res.status(200).send("Welcome 🙌 ");

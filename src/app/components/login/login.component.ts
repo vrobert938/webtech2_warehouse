@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.authService
       .login(this.user)
       .subscribe((response) => {
-          this.router.navigate(['warehouse']);
+          this.router.navigate(['getItems']);
       });
 
   }
